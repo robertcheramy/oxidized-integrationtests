@@ -1,0 +1,26 @@
+services:
+  # This is oxidized based on debian with official install instructions
+  # It runs on port 8042
+  linuxgeneric:
+    image: localhost/oit/linuxgeneric
+  oxidized:
+    image: localhost/oit/debian_install
+    ports:
+      - 127.0.0.1:8001:8888/tcp
+    volumes:
+       - ./run/oxidized-config:/root/.config/oxidized
+  # This is an nginx proxy to access oxidized. It runs on port 8082
+  nginx-proxy:
+    image: docker.io/nginx
+    volumes:
+      - ./run/nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - ./run/nginx/htpasswd:/etc/nginx/.htpasswd
+    ports:
+      - 127.0.0.1:8002:8002/tcp
+      - 127.0.0.1:8003:8003/tcp
+  lighttpd-proxy:
+    image: localhost/oit/lighttpd
+    volumes:
+      - ./run/lighttpd/proxy.conf:/etc/lighttpd/conf-enabled/proxy.conf
+    ports:
+      - 127.0.0.1:8004:8004/tcp
