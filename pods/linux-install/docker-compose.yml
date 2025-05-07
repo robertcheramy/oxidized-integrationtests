@@ -1,10 +1,13 @@
 services:
-  # This is oxidized based on debian with official install instructions
-  # It runs on port 8042
+  # This is oxidized based on different distributions with official
+  # install instructions
+  # It runs on port 8001
   linuxgeneric:
     image: localhost/oit/linuxgeneric
   oxidized:
-    image: localhost/oit/debian_install
+    # image: localhost/oit/debian_install
+    # image: localhost/oit/fedora_install
+    image: localhost/oit/rockylinux_install
     ports:
       - 127.0.0.1:8001:8888/tcp
     volumes:

@@ -9,14 +9,16 @@ that this may take some time and ressources AND it may not work.
 
 You probably prefer to build images once (`make images` or rebuild images as
 needed (`cd images; make debian_install.rebuild`), and run one pod at a time
-(`cd pods/debian-install; make setup; make run`).
+(`cd pods/linux-install; make setup; make run`).
 
 Don't forget to `make stop` after running your pod to clean the rights in the
 filesystem (official-docker).
 
-## debian-install
-Debian as you would intall it from instructions, with an nginx  and a lighttpd
-web-proxy.
+## linux-install
+Different linux distributions as you would intall them from Oxidized
+instructions, with an nginx and a lighttpd web-proxy.
+
+Choose the Distribution you want to run in `pods/linux-install/docker-compose.yml`
 
 ### Tests
 - default debian install: http://localhost:8001/
