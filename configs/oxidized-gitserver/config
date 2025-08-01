@@ -3,14 +3,16 @@ username: oxidized
 password: oxidized
 resolve_dns: true
 interval: 3600
-use_syslog: false
 debug: false
 threads: 30
 use_max_threads: true
 timeout: 20
 retries: 3
 prompt: !ruby/regexp /^([\w.@-]+[#>]\s?)$/
-rest: 0.0.0.0:8888
+extensions:
+  oxidized-web:
+    load: true
+    listen: 0.0.0.0
 next_adds_job: false
 vars: {}
 groups: {}

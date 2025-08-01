@@ -13,8 +13,8 @@ help:
 
 setup:
 	mkdir -p run
-	mkdir -p run/oxidized-ssh
-	cp -R $(CONFIGS)/oxidized-gitserver run/oxidized-config
+	mkdir -p run/oxidized-ssh run/oxidized-config
+	cp -R $(CONFIGS)/oxidized-gitserver/* run/oxidized-config/
 	git init --bare run/repo.git;
 
 clean:

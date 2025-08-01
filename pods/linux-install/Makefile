@@ -13,7 +13,8 @@ help:
 
 setup:
 	mkdir -p run
-	cp -R $(CONFIGS)/oxidized-file run/oxidized-config
+	mkdir -p run/oxidized-config
+	cp -R $(CONFIGS)/oxidized-file/* run/oxidized-config/
 	cp -R $(CONFIGS)/nginx run/
 	cp -R $(CONFIGS)/lighttpd run/
 
