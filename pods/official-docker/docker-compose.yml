@@ -2,10 +2,11 @@ services:
   oxidized:
     # Choose the image that you want to test
     # image: docker.io/oxidized/oxidized:0.32.1
-    image: docker.io/oxidized/oxidized:latest
+    # image: docker.io/oxidized/oxidized:latest
     # build localhost/oxidized:latest with "rake build_container" in the
     # oxidized git repository
     # image: localhost/oxidized:latest
+    image: localhost/oit/custom_gems:latest
     ports:
       - 127.0.0.1:8042:8888/tcp
     environment:
