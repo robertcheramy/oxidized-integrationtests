@@ -1,15 +1,12 @@
-# This image tests the installation on Fedora
-# As Fedora is Cutting-edge, we always use latest
-FROM docker.io/rockylinux:9.3
+# This image tests the installation on Rocky Linux 10 "Red Quarz"
+FROM docker.io/rockylinux/rockylinux:10
 
 RUN dnf -y update \
-    # Enable EPEL and CRB (for development headers and libssh2)
+    # Enable EPEL (for dumb-init) and CRB (for development headers and libssh2)
     && dnf -y install epel-release \
     && dnf config-manager --set-enabled crb \
-    # You need ruby 3.1 to run oxidized
-    && dnf -y module enable ruby:3.1 \
     && dnf -y install \
-        # minimal init system, not supported in rockylinux:9.3
+        # minimal init system
         dumb-init \
         # Packages from official installation instructions
         ruby ruby-devel \
