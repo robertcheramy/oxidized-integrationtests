@@ -3,5 +3,5 @@ FROM docker.io/oxidized/oxidized:latest
 
 WORKDIR /tmp/custom_gems
 COPY custom_gems_data .
-RUN gem install *.gem
+RUN set -e; for gem in *.gem; do [ -e "$gem" ] || continue; gem install "$gem"; done
 WORKDIR /

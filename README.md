@@ -15,7 +15,7 @@ Don't forget to `make stop` after running your pod to clean the rights in the
 filesystem (official-docker).
 
 ## linux-install
-Different linux distributions as you would intall them from Oxidized
+Different linux distributions as you would install them from Oxidized
 instructions, with an nginx and a lighttpd web-proxy.
 
 Choose the Distribution you want to run in `pods/linux-install/docker-compose.yml`
@@ -24,7 +24,7 @@ Choose the Distribution you want to run in `pods/linux-install/docker-compose.ym
 - default debian install: http://localhost:8001/
 - nginx good reverse proxy: http://localhost:8002/
 - nginx bad proxy configuration: http://localhost:8003/
-  - produces a "Host not permited", see Issue https://github.com/ytti/oxidized/issues/3340
+  - produces a "Host not permitted", see Issue https://github.com/ytti/oxidized/issues/3340
 - lighttpd proxy: http://localhost:8004/
 
 ## official docker

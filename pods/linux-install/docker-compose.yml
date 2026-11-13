@@ -7,7 +7,7 @@ services:
   oxidized:
     # image: localhost/oit/debian_install
     # image: localhost/oit/fedora_install
-    image: localhost/oit/rockylinux_install
+    image: localhost/oit/debian_forky_install
     ports:
       - 127.0.0.1:8001:8888/tcp
     volumes:

@@ -5,8 +5,8 @@ RUN dnf -y update \
     # Enable EPEL (for dumb-init) and CRB (for development headers and libssh2)
     && dnf -y install epel-release \
     && dnf config-manager --set-enabled crb \
-    # You need ruby >= 3.2 to run oxidized
-    && dnf -y module enable ruby:3.3 \
+    # You need ruby >= 3.1 to run oxidized
+    && dnf -y module enable ruby:3.1 \
     && dnf -y install \
         # minimal init system
         dumb-init \
